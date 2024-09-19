@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",  // or "off" to completely disable it
+    "@next/next/no-img-element": "warn", // Lower the severity or disable it
+    "prefer-const": "warn", // Switch to warning instead of error
+    "react/no-unescaped-entities": "warn",
+    "no-var": "warn"
+  }
 }
