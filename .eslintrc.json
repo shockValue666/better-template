@@ -5,6 +5,7 @@
     "@next/next/no-img-element": "warn", // Lower the severity or disable it
     "prefer-const": "warn", // Switch to warning instead of error
     "react/no-unescaped-entities": "warn",
-    "no-var": "warn"
+    "no-var": "warn",
+    "@typescript-eslint/no-explicit-any": "warn"  // or "warn"
   }
 }

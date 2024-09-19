@@ -97,12 +97,12 @@ export default function Home() {
         {/* logos and partners   */}
         <section className="py-8 bg-background text-foreground">
           <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
-            <img src="/logos/chatgpt.png" alt="Salesforce" className="h-12" />
-            <img src="/logos/instagram.png" alt="Hubspot" className="h-12" />
-            <img src="/logos/kick.png" alt="Powered by OpenAI" className="h-12" />
-            <img src="/logos/tiktok.png" alt="Google Analytics" className="h-12" />
-            <img src="/logos/x.png" alt="LinkedIn" className="h-12" />
-            <img src="/logos/youtube.png" alt="Segment" className="h-12" />
+            <Image src="/logos/chatgpt.png" alt="Salesforce" className="h-12" />
+            <Image src="/logos/instagram.png" alt="Hubspot" className="h-12" />
+            <Image src="/logos/kick.png" alt="Powered by OpenAI" className="h-12" />
+            <Image src="/logos/tiktok.png" alt="Google Analytics" className="h-12" />
+            <Image src="/logos/x.png" alt="LinkedIn" className="h-12" />
+            <Image src="/logos/youtube.png" alt="Segment" className="h-12" />
           </div>
         </section>
 
