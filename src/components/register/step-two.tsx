@@ -48,11 +48,17 @@ const StepTwo:React.FC<Props> = ({register,errors,getValues,setStep,onOtp,loadin
                         placeholder='Confirm Password'
                         errors={errors}
                     />
-                    <Button type="submit" {...({onClick:async ()=>{
-                        await onOtp(getValues("email"),getValues("password"),setStep)
-                    }})}>
+                    <div className='flex gap-x-8 justify-around'>
+                        <Button className='w-full' type="button" onClick={() => setStep(step => step - 1)} >
+                            previous step
+                        </Button>
+                        <Button className='w-full' type="submit" {...({onClick:async ()=>{
+                            await onOtp(getValues("email"),getValues("password"),setStep)
+                        }})}>
+                            next
+                        </Button>
+                    </div>
                         Submit
-                    </Button>
                     <p>
                         Already have an account?{' '}
                         <Link href="/auth/login" className='font-bold'>

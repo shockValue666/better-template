@@ -96,13 +96,13 @@ export default function Home() {
 
         {/* logos and partners   */}
         <section className="py-8 bg-background text-foreground">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
-            <Image src="/logos/chatgpt.png" alt="Salesforce" className="h-12" />
-            <Image src="/logos/instagram.png" alt="Hubspot" className="h-12" />
-            <Image src="/logos/kick.png" alt="Powered by OpenAI" className="h-12" />
-            <Image src="/logos/tiktok.png" alt="Google Analytics" className="h-12" />
-            <Image src="/logos/x.png" alt="LinkedIn" className="h-12" />
-            <Image src="/logos/youtube.png" alt="Segment" className="h-12" />
+          <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 gap-x-32 items-center justify-items-center">
+            <Image src="/logos/chatgpt.png" alt="Salesforce" width={72} height={72} className="h-auto" />
+            <Image src="/logos/instagram.png" alt="Hubspot" width={72} height={72} className="h-auto" />
+            <Image src="/logos/kick.png" alt="Powered by OpenAI" width={72} height={72} className="h-auto" />
+            <Image src="/logos/tiktok.png" alt="Google Analytics" width={72} height={72} className="h-auto" />
+            <Image src="/logos/x.png" alt="LinkedIn" width={72} height={72} className="h-auto" />
+            <Image src="/logos/youtube.png" alt="Segment" width={72} height={72} className="h-auto" />
           </div>
         </section>
 

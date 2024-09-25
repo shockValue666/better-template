@@ -12,9 +12,19 @@ const RegisterSteps = () => {
     const {step, setStep} = useStepContext();
     const {register, formState:{errors}, setValue, getValues} = useFormContext();
     const [role, setRole] = useState<"User"| "Promoter" | null>()
-    const {onOtp,loading} = useRegisterForm();
+    const {onOtp,loading,onGetRefCookie} = useRegisterForm();
     const [otp,setOtp] = useState<string>("");
     setValue("otp",otp)
+
+    useEffect(()=>{
+      async function getRef(){
+        const refId = await onGetRefCookie();
+        setValue("refId",refId)
+      }
+
+      getRef()
+      
+    },[])
 
 
     useEffect(()=>{
@@ -24,6 +34,10 @@ const RegisterSteps = () => {
     useEffect(()=>{
       console.log("role changed: ",role)
     },[role])
+
+    useEffect(()=>{
+      console.log("errors: ",errors)
+    },[errors])
 
     switch(step){
       case 1:
@@ -40,13 +54,6 @@ const RegisterSteps = () => {
         <StepThree otp={otp} setOtp={setOtp}/>
       )
     }
-  return (
-    <div>
-        <Button onClick={()=>{console.log("pressed");setStep(prev=>prev+1)}}>
-            step
-        </Button>
-    </div>
-  )
 }
 
 export default RegisterSteps
