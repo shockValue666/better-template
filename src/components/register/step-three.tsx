@@ -4,16 +4,20 @@ import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button';
 import { OTPInput } from './otp-input';
 import { useStepContext } from '@/providers/register/step-context-provider';
+import Loader from '../globals/loader';
+
 
 interface Props {
     otp:string,
-    setOtp:React.Dispatch<React.SetStateAction<string>>
+    setOtp:React.Dispatch<React.SetStateAction<string>>,
+    loading:boolean
 }
 
-const StepThree:React.FC<Props> = ({otp,setOtp}) => {
+const StepThree:React.FC<Props> = ({otp,setOtp,loading}) => {
     const {setStep} = useStepContext()
   return (
-   <div className="flex justify-center items-center h-screen"> {/* Full screen flex container */}
+    <Loader loading={loading}>
+    <div className="flex justify-center items-center h-screen"> {/* Full screen flex container */}
             <div className="text-center space-y-4"> {/* Inner content container */}
                 <Label className="text-3xl">
                     OTP
@@ -34,6 +38,7 @@ const StepThree:React.FC<Props> = ({otp,setOtp}) => {
                 </div>
             </div>
         </div>
+    </Loader>
   )
 }
 
