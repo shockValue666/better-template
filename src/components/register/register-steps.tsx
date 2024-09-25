@@ -51,7 +51,7 @@ const RegisterSteps = () => {
 
       case 3: 
       return (
-        <StepThree otp={otp} setOtp={setOtp}/>
+        <StepThree otp={otp} setOtp={setOtp} loading={loading}/>
       )
     }
 }
