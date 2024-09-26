@@ -1,13 +1,21 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
+import { getRole } from "./actions/global";
+
 
 
 const isProtectedRoute = createRouteMatcher([
-  '/dashboard'
+  '/dashboard',
+  '/dashboard/promoter',
+  '/dashboard/customer',
 ])
 
 const isPromoter = createRouteMatcher([
   "/dashboard/promoter"
+])
+
+const isDashboard = createRouteMatcher([
+  "/dashboard"
 ])
 
 // export const customMiddleware = async (request:NextRequest) => {
@@ -49,22 +57,25 @@ const isPromoter = createRouteMatcher([
 //     return NextResponse.next();
 // }
 
-export default clerkMiddleware((auth,req)=>{
+export default clerkMiddleware(async (auth,req)=>{
   console.log("clerk middleware running: ",req.nextUrl.origin)
-  if(isProtectedRoute(req)){
-    console.log("route is protected")
-    // auth().protect({unauthenticatedUrl:req.nextUrl.origin + "/auth/login"});
-  }
-  else if(isPromoter(req)){
-    auth().protect((has)=>{
-      return (
-        has({permission:""})
-      )
-    })
-    console.log("isPromoter")
-  }else{
-    console.log("route isn't protected")
-  }
+
+  const {userId} = auth()
+
+  // if(isProtectedRoute(req)){
+  //   console.log("route is protected")
+  //   auth().protect({unauthenticatedUrl:req.nextUrl.origin + "/auth/login"});
+  // }
+  // else if(isPromoter(req)){
+  //   auth().protect((has)=>{
+  //     return (
+  //       has({permission:""})
+  //     )
+  //   })
+  //   console.log("isPromoter")
+  // }else{
+  //   console.log("route isn't protected")
+  // }
 });
 
 

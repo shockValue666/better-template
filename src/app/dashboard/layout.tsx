@@ -1,13 +1,19 @@
+import SideNav from '@/components/dashboard/sidenav/sidenav'
 import React from 'react'
 
-interface Props {
+interface Props{
     children:React.ReactNode
 }
 
 const Layout:React.FC<Props> = ({children}) => {
   return (
     <div>
-        {children}
+        {/* <div>
+            <SideNav/>
+        </div> */}
+        <div>
+            {children}
+        </div>
     </div>
   )
 }

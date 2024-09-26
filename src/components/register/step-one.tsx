@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Megaphone, User } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FieldValue, FieldValues, UseFormRegister } from 'react-hook-form'
+import Link from 'next/link'
 
 export default function StepOne({register,role, setRole, setStep}:{
     register:UseFormRegister<FieldValues>,
@@ -88,6 +89,12 @@ export default function StepOne({register,role, setRole, setStep}:{
             Next
           </Button>
         </CardContent>
+          <p className='text-center mb-4'>
+            Already have an account?{' '}
+            <Link href="/auth/login" className='font-bold'>
+            Log in
+            </Link> 
+        </p>
       </Card>
     </div>
   )
